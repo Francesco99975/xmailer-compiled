@@ -1,0 +1,89 @@
+<div style='margin: 2rem;'>
+    <h1 style='padding: 2rem 0; color: {{ color }};'>
+        {{ result }}
+    </h1>
+    <h1>Personal Informations</h1>
+    <ul>
+        <li>First Name: {{covidInfo.firstName}}</li>
+        {{#if covidInfo.hasMiddle}}
+        <li>Middle Name: {{covidInfo.middleName}}</li>
+        {{/if}}
+        <li>Last Name: {{covidInfo.lastName}}</li>
+    </ul>
+    <h1>Symptoms</h1>
+    <ul>
+        <li>Fever or Chills:
+            <span
+                style='color: {{#if covidInfo.symptoms.fever}}red{{/if}}{{#unless covidInfo.symptoms.fever}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.symptoms.fever}}YES{{/if}}{{#unless covidInfo.symptoms.fever}}NO{{/unless}}
+            </span>
+        </li>
+
+        <li>Difficulty breathing or shortness of breath:
+            <span
+                style='color: {{#if covidInfo.symptoms.breath}}red{{/if}}{{#unless covidInfo.symptoms.breath}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.symptoms.breath}}YES{{/if}}{{#unless covidInfo.symptoms.breath}}NO{{/unless}}
+            </span>
+        </li>
+
+        <li>Cough:
+            <span
+                style='color: {{#if covidInfo.symptoms.cough}}red{{/if}}{{#unless covidInfo.symptoms.cough}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.symptoms.cough}}YES{{/if}}{{#unless covidInfo.symptoms.cough}}NO{{/unless}}
+            </span>
+        </li>
+
+        <li>Sore Throat, trouble swallowing:
+            <span
+                style='color: {{#if covidInfo.symptoms.throat}}red{{/if}}{{#unless covidInfo.symptoms.throat}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.symptoms.throat}}YES{{/if}}{{#unless covidInfo.symptoms.throat}}NO{{/unless}}
+            </span>
+        </li>
+
+        <li>Runny nose / stuffy nose or nasal congestion:
+            <span
+                style='color: {{#if covidInfo.symptoms.nose}}red{{/if}}{{#unless covidInfo.symptoms.nose}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.symptoms.nose}}YES{{/if}}{{#unless covidInfo.symptoms.nose}}NO{{/unless}}
+            </span>
+        </li>
+
+        <li>Decrease or loss of smell or taste:
+            <span
+                style='color: {{#if covidInfo.symptoms.taste}}red{{/if}}{{#unless covidInfo.symptoms.taste}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.symptoms.taste}}YES{{/if}}{{#unless covidInfo.symptoms.taste}}NO{{/unless}}
+            </span>
+        </li>
+
+        <li>Nausea, vomiting, diarrhea, abdominal pain:
+            <span
+                style='color: {{#if covidInfo.symptoms.nausea}}red{{/if}}{{#unless covidInfo.symptoms.nausea}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.symptoms.nausea}}YES{{/if}}{{#unless covidInfo.symptoms.nausea}}NO{{/unless}}
+            </span>
+        </li>
+
+        <li>Not feeling well, extreme tiredness, sore muscles:
+            <span
+                style='color: {{#if covidInfo.symptoms.tiredness}}red{{/if}}{{#unless covidInfo.symptoms.tiredness}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.symptoms.tiredness}}YES{{/if}}{{#unless covidInfo.symptoms.tiredness}}NO{{/unless}}
+            </span>
+        </li>
+    </ul>
+    <h1>Travel</h1>
+    <ul>
+        <li>Have you travelled outside Canada in the past 14 days ?:
+            <span
+                style='color: {{#if covidInfo.travel}}red{{/if}}{{#unless covidInfo.travel}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.travel}}YES{{/if}}{{#unless covidInfo.travel}}NO{{/unless}}
+            </span>
+        </li>
+    </ul>
+    <h1>Contact</h1>
+    <ul>
+        <li>Have you had close contact with a confirmed or probable case of COVID-19 ?:
+            <span
+                style='color: {{#if covidInfo.contact}}red{{/if}}{{#unless covidInfo.contact}}green{{/unless}}; font-weight:bold;'>
+                {{#if covidInfo.contact}}YES{{/if}}{{#unless covidInfo.contact}}NO{{/unless}}
+            </span>
+        </li>
+    </ul>
+</div>
